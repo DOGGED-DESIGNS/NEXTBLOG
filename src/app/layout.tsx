@@ -1,8 +1,25 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Poppins, Montserrat, Recursive } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import MaxwidthWrapper from "@/components/MaxwidthWrapper";
+import Rainbow from "@/components/Rainbow";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // All weights
+  variable: "--font-poppins", // Define CSS variable
+});
+const recursive = Recursive({
+  subsets: ["latin"],
+});
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // All weights
+  variable: "--font-montserrat",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +33,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="font-poppins">
+        <main className=" border min-h-lvh">
+          <MaxwidthWrapper>
+            <Rainbow />
+            <Navbar />
+          </MaxwidthWrapper>
+
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
