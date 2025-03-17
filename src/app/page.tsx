@@ -2,7 +2,11 @@ import MaxwidthWrapper from "@/components/MaxwidthWrapper";
 import Rainbow from "@/components/Rainbow";
 import React from "react";
 import { Input } from "@/components/ui/input";
-import { pagination } from "@heroui/theme";
+import {
+  Pagination,
+  PaginationItem,
+  PaginationCursor,
+} from "@heroui/pagination";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import Bigcard from "@/components/Bigcard";
@@ -66,7 +70,7 @@ export default function page() {
           All blog gpost{" "}
         </h2>
 
-        <div className=" m grid gap-60  md:grid-cols-2 lg:grid-col-3 max-sm:grid-col-1 ">
+        <div className=" m grid gap-60  md:grid-cols-2 lg:grid-cols-3 max-sm:grid-col-1 ">
           <div>
             <Allpost name="uzoechi jerry" date="15.mar.25" />
           </div>
@@ -76,6 +80,13 @@ export default function page() {
           <div>
             <Allpost name="uzoechi jerry" date="15.mar.25" />
           </div>
+        </div>
+
+        <div className=" flex items-center mt-60">
+          <div className=" m-auto">
+            <Pagination className="" initialPage={1} total={10} size="lg" />
+          </div>
+          ;
         </div>
       </MaxwidthWrapper>
     </>
