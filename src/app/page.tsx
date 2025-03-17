@@ -2,10 +2,12 @@ import MaxwidthWrapper from "@/components/MaxwidthWrapper";
 import Rainbow from "@/components/Rainbow";
 import React from "react";
 import { Input } from "@/components/ui/input";
+import { pagination } from "@heroui/theme";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import Bigcard from "@/components/Bigcard";
 import SpreadCard from "@/components/SpreadCard";
+import Allpost from "@/components/Allpost";
 
 export default function page() {
   return (
@@ -43,7 +45,7 @@ export default function page() {
           Recent Posts{" "}
         </h2>
 
-        <div className=" grid auto-rows-auto gap-4 max-sm:grid-cols-1 grid-cols-2  mt-20">
+        <div className=" grid auto-rows-auto  gap-4 max-sm:grid-cols-1 md:grid-col-1  lg:grid-cols-2  mt-20">
           <div className=" col-span-1">
             <Bigcard name="uzoechi jeremiah" text="text" date="24 jan 2025" />
           </div>
@@ -54,6 +56,25 @@ export default function page() {
             <div className=" mb-4">
               <SpreadCard name="uzoechi jeremiah" date="24.jan.2025" />
             </div>
+          </div>
+        </div>
+
+        {/* all blog post */}
+
+        <h2 className=" mb-20 mt-60  text-24 font-bold font-popins capitalize text-zinc-900">
+          {" "}
+          All blog gpost{" "}
+        </h2>
+
+        <div className=" m grid gap-60  md:grid-cols-2 lg:grid-col-3 max-sm:grid-col-1 ">
+          <div>
+            <Allpost name="uzoechi jerry" date="15.mar.25" />
+          </div>
+          <div>
+            <Allpost name="uzoechi jerry" date="15.mar.25" />
+          </div>
+          <div>
+            <Allpost name="uzoechi jerry" date="15.mar.25" />
           </div>
         </div>
       </MaxwidthWrapper>

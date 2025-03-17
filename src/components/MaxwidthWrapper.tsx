@@ -9,7 +9,7 @@ export default function MaxwidthWrapper({
 }) {
   return (
     <>
-      <div className=" m-auto  max-w-screen-2xl  px-5 flex flex-col">
+      <div className=" m-auto  max-w-screen-xl  px-5 flex flex-col">
         {children}
       </div>
     </>

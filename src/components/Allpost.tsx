@@ -2,28 +2,26 @@ import { ArrowUp } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-export default function SpreadCard({
-  name,
+export default function Allpost({
   date,
+  name,
 }: {
-  name: string;
   date: string;
+  name: string;
 }) {
   return (
     <>
-      <div className="flex h-auto   max-sm:mt-20 flex-row gap-2 max-sm:block">
-        <Link
-          href={"#"}
-          className=" block  shrink-0 overflow-hidden  h-auto w-[300px] max-sm:w-full    "
-        >
+      <div className=" ">
+        <div className=" border w-full h-[300px]">
           <img
+            alt=" blogimage"
             src="/pexels-polina-tankilevitch-4440572.jpg"
-            alt="blogimg"
-            className=" h-full w-full object-cover  "
+            className=" object-cover w-full h-full"
           />
-        </Link>
-        <div className=" h-auto">
-          <p className="  text-muted-foreground font-popins max-sm:mt-20 text-xs font-bold  ">
+        </div>
+
+        <div>
+          <p className="  text-muted-foreground font-popins max-sm:mt-20 md:mt-20 text-xs font-bold  ">
             {name}. {date}{" "}
           </p>
           <div className=" gap-4   items-center flex flex-row">
