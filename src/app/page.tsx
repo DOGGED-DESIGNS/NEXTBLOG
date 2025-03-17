@@ -82,11 +82,37 @@ export default function page() {
           </div>
         </div>
 
-        <div className=" flex items-center mt-60">
+        <div className=" h-[1px] w-full bg-zinc-200 my-60 " />
+
+        <div className=" flex items-center ">
           <div className=" m-auto">
             <Pagination className="" initialPage={1} total={10} size="lg" />
           </div>
           ;
+        </div>
+
+        <div className=" my-60">
+          <Rainbow />
+        </div>
+
+        {/* signup to our news letter */}
+
+        <div className=" mb-60 grid grid-cols-2">
+          <div className=" border">
+            <p>stay up to date latest</p>
+          </div>
+
+          <div className="   justify-self-end      flex gap-2 items-center">
+            <Input placeholder="Enter your Email" />
+            <Button size="default">Submit</Button>
+          </div>
+        </div>
+
+        <div className=" mb-60 grid grid-cols-6  ">
+          <div className=" col-span-2 border">
+            <h2>Dogged insight</h2>
+          </div>
+          <div className=" col-span-4  border ">all the links</div>
         </div>
       </MaxwidthWrapper>
     </>
