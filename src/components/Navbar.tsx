@@ -1,13 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Variant, motion, AnimatePresence, easeInOut } from "framer-motion";
 import { ChevronDown, Menu } from "lucide-react";
 import Link from "next/link";
 import Solutionhover from "./Solutionhover";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const [hov, setHov] = useState<boolean>(false);
+
+  const [toggle, setToggle] = useState<number>(1);
   return (
     <>
       <nav className="hidden max-sm:flex  items-center  py-2 ">
@@ -34,43 +37,63 @@ export default function Navbar() {
         {/* all the links */}
 
         <div className=" m-auto  gap-60   flex  ">
+          {/* category and solutions */}
           <Link
             href={"#"}
-            className="  font-semibold font-popins 
+            onClick={() => setToggle(1)}
+            className="   font-semibold font-popins 
            text-15
           "
           >
-            {" "}
-            Home{" "}
+            <span
+              className={cn(
+                "h-3 w-3 mr-1 opacity-0  inline-block   bg-custom-gradient rounded-full border ",
+                { "opacity-100": toggle === 1 }
+              )}
+            ></span>
+            Home
           </Link>
           <Link
+            onClick={() => setToggle(2)}
             className="  font-semibold font-popins 
            text-15
           "
             href={"#"}
           >
-            {" "}
+            <span
+              className={cn(
+                "h-3 w-3 mr-1 opacity-0  inline-block   bg-custom-gradient rounded-full border ",
+                { "opacity-100": toggle === 2 }
+              )}
+            ></span>
             Tech{" "}
           </Link>
           <Link
+            onClick={() => setToggle(3)}
             className="  font-semibold font-popins 
            text-15
           "
             href={"#"}
           >
-            {" "}
+            <span
+              className={cn(
+                "h-3 w-3 mr-1 opacity-0  inline-block   bg-custom-gradient rounded-full border ",
+                { "opacity-100": toggle === 3 }
+              )}
+            ></span>
             Engineering{" "}
           </Link>
           <motion.div
             onHoverStart={() => {
               setHov(true);
             }}
+            onClick={() => setToggle(4)}
             onHoverEnd={() => {
               setHov(false);
             }}
             className=" cursor-pointer flex relative font-semibold font-popins text-15 gap-2 items-center "
           >
-            solutions{" "}
+            solutions
             <motion.div
               className="  "
               initial={{
@@ -126,7 +149,11 @@ export default function Navbar() {
         </div>
 
         <div className=" flex items-center gap-2">
-          <Button variant={"outline"} size={"default"}>
+          <Button
+            className=" border-zinc-950  "
+            variant={"outline"}
+            size={"default"}
+          >
             Get started
           </Button>
 

@@ -1,3 +1,4 @@
+import MaxwidthWrapper from "@/components/MaxwidthWrapper";
 import React from "react";
 
 async function getHalve(id: number) {
@@ -15,5 +16,11 @@ interface paramspage {
 }
 
 export default async function page({ params }: paramspage) {
-  return <div> {params.id} </div>;
+  return (
+    <>
+      <MaxwidthWrapper>
+        <div>tkhi is it</div>
+      </MaxwidthWrapper>
+    </>
+  );
 }
